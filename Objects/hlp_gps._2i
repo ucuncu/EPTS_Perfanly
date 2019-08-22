@@ -1,0 +1,6 @@
+--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork -I .\Helpers\include -I ".\LPC1768 Drivers\Drivers\include" -I ".\LPC1768 Drivers\Core\CMSIS\include" -I .\Main\include -I ..\iNOVA -I ".\Private Functions\include" -I .\USB\include
+-I.\RTE\_LPC1768
+-IC:\Users\Hamit\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.5.0\Device\Include
+-IC:\Keil_v5\ARM\CMSIS\Include
+-D__UVISION_VERSION="527" -DLPC175x_6x
+-o .\objects\hlp_gps.o --omf_browse .\objects\hlp_gps.crf --depend .\objects\hlp_gps.d --feedback ".\Objects\inova_perf_reader_b.fed" "Helpers\source\hlp_gps.c"

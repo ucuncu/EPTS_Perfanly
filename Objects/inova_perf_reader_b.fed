@@ -1,0 +1,297 @@
+;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Thu Aug 01 05:56:46 2019
+;VERSION 0.2
+;FILE debug_frmwrk.o
+__asm___14_debug_frmwrk_c_e73e2caf____REV16 <= USED 0
+__asm___14_debug_frmwrk_c_e73e2caf____REVSH <= USED 0
+;FILE delay.o
+DELAY_ms <= USED 0
+DELAY_sec <= USED 0
+DELAY_us <= USED 0
+__asm___7_delay_c_DELAY_us____REV16 <= USED 0
+__asm___7_delay_c_DELAY_us____REVSH <= USED 0
+;FILE extintr.o
+EINT_DetachInterrupt <= USED 0
+__asm___9_extintr_c_intcnt____REV16 <= USED 0
+__asm___9_extintr_c_intcnt____REVSH <= USED 0
+;FILE fat32.o
+FILE_Delete <= USED 0
+FILE_GetCh <= USED 0
+FILE_GetList <= USED 0
+FILE_GetMemoryStatics <= USED 0
+deletefile <= USED 0
+;FILE fifo.o
+fifo_inc_tail <= USED 0
+fifo_init <= USED 0
+fifo_read <= USED 0
+fifo_read_ch <= USED 0
+fifo_write <= USED 0
+;FILE fxas21002.o
+__asm___11_fxas21002_c_a9e5476f____REV16 <= USED 0
+__asm___11_fxas21002_c_a9e5476f____REVSH <= USED 0
+;FILE gpio.o
+GPIO_PinToggle <= USED 0
+__asm___6_gpio_c_1d4f2b10____REV16 <= USED 0
+__asm___6_gpio_c_1d4f2b10____REVSH <= USED 0
+;FILE hlp_gps.o
+__asm___9_hlp_gps_c_k____REV16 <= USED 0
+__asm___9_hlp_gps_c_k____REVSH <= USED 0
+gps_power_down <= USED 0
+gps_power_up <= USED 0
+;FILE hlp_uart.o
+UART0_GetChar <= USED 0
+UART0_PutCharWait <= USED 0
+UART0_is_rx_empty <= USED 0
+UART0_is_tx_empty <= USED 0
+UART0_wait <= USED 0
+UART1_GetChar <= USED 0
+UART1_PutChar <= USED 0
+UART1_PutCharWait <= USED 0
+UART1_is_rx_empty <= USED 0
+UART1_is_tx_empty <= USED 0
+UART1_wait <= USED 0
+UART2_GetChar <= USED 0
+UART2_PutChar <= USED 0
+UART2_PutCharWait <= USED 0
+UART2_is_rx_empty <= USED 0
+UART2_is_tx_empty <= USED 0
+UART2_wait <= USED 0
+UART3_GetChar <= USED 0
+UART3_PutCharWait <= USED 0
+UART3_is_rx_empty <= USED 0
+UART3_is_tx_empty <= USED 0
+UART3_wait <= USED 0
+__asm___10_hlp_uart_c_649d2689____REV16 <= USED 0
+__asm___10_hlp_uart_c_649d2689____REVSH <= USED 0
+;FILE hlp_vic.o
+__asm___9_hlp_vic_c_f3e55cfe____REV16 <= USED 0
+__asm___9_hlp_vic_c_f3e55cfe____REVSH <= USED 0
+hlp_vic_clr <= USED 0
+hlp_vic_disable_all_irq <= USED 0
+hlp_vic_init <= USED 0
+;FILE i2c.o
+I2C1Init <= USED 0
+I2C2Init <= USED 0
+I2CStart <= USED 0
+I2CStop <= USED 0
+__asm___5_i2c_c_e755d2a4____REV16 <= USED 0
+__asm___5_i2c_c_e755d2a4____REVSH <= USED 0
+;FILE iis2mdc_reg.o
+__asm___13_iis2mdc_reg_c_e0f74cbc____REV16 <= USED 0
+__asm___13_iis2mdc_reg_c_e0f74cbc____REVSH <= USED 0
+iis2mdc_from_lsb_to_celsius <= USED 0
+iis2mdc_from_lsb_to_mgauss <= USED 0
+;FILE json_serialiser.o
+json_array <= USED 0
+json_array_append_boolean <= USED 0
+json_array_append_null <= USED 0
+json_array_append_number <= USED 0
+json_array_append_string <= USED 0
+json_array_append_value <= USED 0
+json_array_clear <= USED 0
+json_array_get_array <= USED 0
+json_array_get_boolean <= USED 0
+json_array_get_number <= USED 0
+json_array_get_object <= USED 0
+json_array_get_string <= USED 0
+json_array_get_wrapping_value <= USED 0
+json_array_remove <= USED 0
+json_array_replace_boolean <= USED 0
+json_array_replace_null <= USED 0
+json_array_replace_number <= USED 0
+json_array_replace_string <= USED 0
+json_array_replace_value <= USED 0
+json_boolean <= USED 0
+json_number <= USED 0
+json_object <= USED 0
+json_object_clear <= USED 0
+json_object_dotget_array <= USED 0
+json_object_dotget_boolean <= USED 0
+json_object_dotget_number <= USED 0
+json_object_dotget_object <= USED 0
+json_object_dotget_string <= USED 0
+json_object_dotget_value <= USED 0
+json_object_dothas_value <= USED 0
+json_object_dothas_value_of_type <= USED 0
+json_object_dotremove <= USED 0
+json_object_dotset_boolean <= USED 0
+json_object_dotset_null <= USED 0
+json_object_get_array <= USED 0
+json_object_get_boolean <= USED 0
+json_object_get_number <= USED 0
+json_object_get_object <= USED 0
+json_object_get_string <= USED 0
+json_object_get_value_at <= USED 0
+json_object_has_value <= USED 0
+json_object_has_value_of_type <= USED 0
+json_object_remove <= USED 0
+json_object_set_boolean <= USED 0
+json_object_set_null <= USED 0
+json_parse_file <= USED 0
+json_parse_file_with_comments <= USED 0
+json_parse_string <= USED 0
+json_parse_string_with_comments <= USED 0
+json_serialization_size_pretty <= USED 0
+json_serialize_to_buffer_pretty <= USED 0
+json_serialize_to_file <= USED 0
+json_serialize_to_file_pretty <= USED 0
+json_serialize_to_string_pretty <= USED 0
+json_set_allocation_functions <= USED 0
+json_set_escape_slashes <= USED 0
+json_string <= USED 0
+json_type <= USED 0
+json_validate <= USED 0
+json_value_deep_copy <= USED 0
+json_value_equals <= USED 0
+json_value_get_parent <= USED 0
+json_value_init_array <= USED 0
+json_value_init_boolean <= USED 0
+json_value_init_null <= USED 0
+;FILE lpc17xx_clkpwr.o
+CLKPWR_DeepPowerDown <= USED 0
+CLKPWR_DeepSleep <= USED 0
+CLKPWR_Sleep <= USED 0
+__asm___16_lpc17xx_clkpwr_c_5f9c9c89____REV16 <= USED 0
+__asm___16_lpc17xx_clkpwr_c_5f9c9c89____REVSH <= USED 0
+;FILE lpc17xx_gpio.o
+FIO_ByteClearValue <= USED 0
+FIO_ByteReadValue <= USED 0
+FIO_ByteSetDir <= USED 0
+FIO_ByteSetMask <= USED 0
+FIO_ByteSetValue <= USED 0
+FIO_ClearInt <= USED 0
+FIO_ClearValue <= USED 0
+FIO_GetIntStatus <= USED 0
+FIO_HalfWordClearValue <= USED 0
+FIO_HalfWordReadValue <= USED 0
+FIO_HalfWordSetDir <= USED 0
+FIO_HalfWordSetMask <= USED 0
+FIO_HalfWordSetValue <= USED 0
+FIO_IntCmd <= USED 0
+FIO_ReadValue <= USED 0
+FIO_SetDir <= USED 0
+FIO_SetMask <= USED 0
+FIO_SetValue <= USED 0
+GPIO_ClearInt <= USED 0
+GPIO_GetIntStatus <= USED 0
+GPIO_IntCmd <= USED 0
+__asm___14_lpc17xx_gpio_c_38c397c6____REV16 <= USED 0
+__asm___14_lpc17xx_gpio_c_38c397c6____REVSH <= USED 0
+;FILE lpc17xx_nvic.o
+NVIC_DeInit <= USED 0
+NVIC_SCBDeInit <= USED 0
+NVIC_SetVTOR <= USED 0
+__asm___14_lpc17xx_nvic_c_d914b817____REV16 <= USED 0
+__asm___14_lpc17xx_nvic_c_d914b817____REVSH <= USED 0
+;FILE lpc17xx_pinsel.o
+PINSEL_ConfigTraceFunc <= USED 0
+PINSEL_SetI2C0Pins <= USED 0
+__asm___16_lpc17xx_pinsel_c_5ef00b0e____REV16 <= USED 0
+__asm___16_lpc17xx_pinsel_c_5ef00b0e____REVSH <= USED 0
+;FILE lpc17xx_systick.o
+SYSTICK_ClearCounterFlag <= USED 0
+SYSTICK_Cmd <= USED 0
+SYSTICK_ExternalInit <= USED 0
+SYSTICK_GetCurrentValue <= USED 0
+SYSTICK_IntCmd <= USED 0
+SYSTICK_InternalInit <= USED 0
+__asm___17_lpc17xx_systick_c_11aed849____REV16 <= USED 0
+__asm___17_lpc17xx_systick_c_11aed849____REVSH <= USED 0
+;FILE lpc17xx_timer.o
+TIM_ClearIntCapturePending <= USED 0
+TIM_ClearIntPending <= USED 0
+TIM_Cmd <= USED 0
+TIM_ConfigCapture <= USED 0
+TIM_ConfigMatch <= USED 0
+TIM_ConfigStructInit <= USED 0
+TIM_DeInit <= USED 0
+TIM_GetCaptureValue <= USED 0
+TIM_GetIntCaptureStatus <= USED 0
+TIM_GetIntStatus <= USED 0
+TIM_Init <= USED 0
+TIM_ResetCounter <= USED 0
+TIM_UpdateMatchValue <= USED 0
+__asm___15_lpc17xx_timer_c_6c20b5c9____REV16 <= USED 0
+__asm___15_lpc17xx_timer_c_6c20b5c9____REVSH <= USED 0
+;FILE lpc17xx_uart.o
+UART_ABClearIntPending <= USED 0
+UART_ABCmd <= USED 0
+UART_CheckBusy <= USED 0
+UART_DeInit <= USED 0
+UART_ForceBreak <= USED 0
+UART_IrDACmd <= USED 0
+UART_IrDAInvtInputCmd <= USED 0
+UART_IrDAPulseDivConfig <= USED 0
+__asm___14_lpc17xx_uart_c_e5efacd7____REV16 <= USED 0
+__asm___14_lpc17xx_uart_c_e5efacd7____REVSH <= USED 0
+;FILE lpc17xx_wdt.o
+WDT_GetCurrentCount <= USED 0
+WDT_UpdateTimeOut <= USED 0
+__asm___13_lpc17xx_wdt_c_WDT_Init____REV16 <= USED 0
+__asm___13_lpc17xx_wdt_c_WDT_Init____REVSH <= USED 0
+;FILE main.o
+__asm___6_main_c_f10ms____REV16 <= USED 0
+__asm___6_main_c_f10ms____REVSH <= USED 0
+;FILE mma8452q.o
+__asm___10_mma8452q_c_b0a99cc6____REV16 <= USED 0
+__asm___10_mma8452q_c_b0a99cc6____REVSH <= USED 0
+portraitLandscapeHandler <= USED 0
+tapHandler <= USED 0
+;FILE mscuser.o
+;FILE peripherals.o
+ADC_init <= USED 0
+__asm___13_peripherals_c_f10msCnt____REV16 <= USED 0
+__asm___13_peripherals_c_f10msCnt____REVSH <= USED 0
+;FILE retarget.o
+_sys_command_string <= USED 0
+_sys_ensure <= USED 0
+_sys_read <= USED 0
+_sys_tmpnam <= USED 0
+getkey <= USED 0
+;FILE ringbuf.o
+rb_elements_count <= USED 0
+rb_free <= USED 0
+rb_init <= USED 0
+rb_reinit <= USED 0
+rb_write_1_element <= USED 0
+rb_write_1_element_overlapped <= USED 0
+rb_write_x_elements <= USED 0
+rb_xfer_1_element <= USED 0
+rb_xfer_x_elements <= USED 0
+;FILE sdcard.o
+SD_erase <= USED 0
+;FILE spi.o
+__asm___5_spi_c_SPI_Init____REV16 <= USED 0
+__asm___5_spi_c_SPI_Init____REVSH <= USED 0
+;FILE startup_lpc17xx.o
+;FILE system_lpc17xx.o
+SystemCoreClockUpdate <= USED 0
+__asm___16_system_LPC17xx_c_5d646a67____REV16 <= USED 0
+__asm___16_system_LPC17xx_c_5d646a67____REVSH <= USED 0
+;FILE testing_functions.o
+__asm___19_testing_functions_c_f6afc3fe____REV16 <= USED 0
+__asm___19_testing_functions_c_f6afc3fe____REVSH <= USED 0
+;FILE usbcore.o
+;FILE usbhw.o
+USB_ClearEPBuf <= USED 0
+USB_DMA_BufAdr <= USED 0
+USB_DMA_Disable <= USED 0
+USB_DMA_Status <= USED 0
+USB_GetFrame <= USED 0
+USB_WakeUp <= USED 0
+__asm___7_usbhw_c_EPAdr____REV16 <= USED 0
+__asm___7_usbhw_c_EPAdr____REVSH <= USED 0
+;FILE usbuser.o
+USB_EndPoint1 <= USED 0
+USB_EndPoint10 <= USED 0
+USB_EndPoint11 <= USED 0
+USB_EndPoint12 <= USED 0
+USB_EndPoint13 <= USED 0
+USB_EndPoint14 <= USED 0
+USB_EndPoint15 <= USED 0
+USB_EndPoint3 <= USED 0
+USB_EndPoint4 <= USED 0
+USB_EndPoint5 <= USED 0
+USB_EndPoint6 <= USED 0
+USB_EndPoint7 <= USED 0
+USB_EndPoint8 <= USED 0
+USB_EndPoint9 <= USED 0
