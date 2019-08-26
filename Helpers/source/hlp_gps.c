@@ -24,12 +24,12 @@ int i,j,k = 0;
 
 char GPS_DATA_BUF[GPS_BUFFER_HEIGHT][GPS_BUFFER_LENGHT];
 char GPS_DATA_BUF_TMP[GPS_BUFFER_HEIGHT][GPS_BUFFER_LENGHT];
-char GPS_TIME_BUF[GPS_DATA_BUFFER_HEIGHT][GPS_TIME_BUFFER_LENGHT] = {'0','0','0','0','0','0','.','0','0','0','\0'};
+char GPS_TIME_BUF[GPS_DATA_BUFFER_HEIGHT][GPS_TIME_BUFFER_LENGHT] = {'0','0','0','0','0','0','.','0','0','\0'};
 char GPS_LAT_BUF[GPS_DATA_BUFFER_HEIGHT][GPS_LAT_BUFFER_LENGHT] = {'0','0','0','0','.','0','0','0','0','0','\0'};
 char GPS_LON_BUF[GPS_DATA_BUFFER_HEIGHT][GPS_LON_BUFFER_LENGHT] = {'0','0','0','0','0','.','0','0','0','0','0','\0'};
 char GPS_FIX_DATA_BUF[GPS_DATA_BUFFER_HEIGHT][GPS_FIX_BUFFER_LENGHT] = {'0','\0'};
 char GPS_VELOCITY_BUF[GPS_DATA_BUFFER_HEIGHT][GPS_VELOCITY_BUFFER_LENGHT] = {'0','.','0','0','0','\0'};
-char GPS_DATE_BUF[GPS_DATA_BUFFER_HEIGHT][GPS_DATE_BUFFER_LENGHT] = {'0','0','0','0','0','0','\0'};
+char GPS_DATE_BUF[GPS_DATA_BUFFER_HEIGHT][GPS_DATE_BUFFER_LENGHT] = {'0','1','0','1','1','9','\0'};      // GPS cold start yaparken zamanin 0 yada null olmasi web uygulamada JSON dönüsümünde hataya yol açiyor.Init deger verdik
 char GPS_ALTITUDE_DATA_BUF[GPS_DATA_BUFFER_HEIGHT][GPS_ALTITUDE_BUFFER_LENGHT] = {'0','.','0','0','0','\0'};
 
 void Delay (unsigned long tick);

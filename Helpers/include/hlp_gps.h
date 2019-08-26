@@ -3,7 +3,7 @@
 #define GPS_BUFFER_LENGHT  82  //Max NMEA data 80 byte, 1 byte for safety,1 byte termination char '/0' 
 #define GPS_BUFFER_HEIGHT  2
 #define GPS_DATA_BUFFER_HEIGHT  1
-#define GPS_TIME_BUFFER_LENGHT  11
+#define GPS_TIME_BUFFER_LENGHT  10
 #define GPS_LAT_BUFFER_LENGHT  11
 #define GPS_LON_BUFFER_LENGHT  12
 #define GPS_FIX_BUFFER_LENGHT  2
