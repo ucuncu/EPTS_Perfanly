@@ -52,7 +52,7 @@ int GYRO_X_BUF[10];
 int GYRO_Y_BUF[10];
 int GYRO_Z_BUF[10];
 
-int GYRO_ERR_BUF = 0;
+//int GYRO_ERR_BUF = 0;
 
 int gyroErrCnt = 0;
 int gyroCnt = 0;
@@ -163,15 +163,15 @@ void read_gyro (void)
 	{
 		fReadGyro = FALSE; // Communication is ok, all register read 
 	}
-	else
-	{
-			if (gyroErrCnt <= 0xFFFF)
-			{
-				gyroErrCnt ++;
-			}
-			GYRO_ERR_BUF = gyroErrCnt;
-		//printf(" GyroErr : %s\n",returnString);
-	}
+//	else
+//	{
+//			if (gyroErrCnt <= 0xFFFF)
+//			{
+//				gyroErrCnt ++;
+//			}
+//			GYRO_ERR_BUF = gyroErrCnt;
+		////printf(" GyroErr : %s\n",returnString);
+//	}
 
 	 for (int i=0; i<6; i+=2)
 	{

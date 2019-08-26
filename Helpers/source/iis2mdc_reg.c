@@ -54,7 +54,7 @@ int MAG_X_BUF[10];
 int MAG_Y_BUF[10];
 int MAG_Z_BUF[10];
 
-int MAG_ERR_BUF = 0;
+//int MAG_ERR_BUF = 0;
 
 int magErrCnt = 0;
 int magCnt = 0;
@@ -177,15 +177,15 @@ void read_magneto(void)
 	{
 		fReadMagneto = FALSE; // Communication is ok, all register read 
 	}
-	else
-	{
-			if (magErrCnt <= 0xFFFF)
-			{
-				magErrCnt ++;
-			}
-			MAG_ERR_BUF = magErrCnt;
-		//printf(" MagErr : %s\n",returnString);
-	}	
+//	else
+//	{
+//			if (magErrCnt <= 0xFFFF)
+//			{
+//				magErrCnt ++;
+//			}
+//			MAG_ERR_BUF = magErrCnt;
+//		//printf(" MagErr : %s\n",returnString);
+//	}	
 	
 	for (int i=0; i<6; i+=2)
   {

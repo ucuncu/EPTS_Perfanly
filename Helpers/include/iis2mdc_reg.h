@@ -80,7 +80,7 @@ extern void magneto_low_power_mode(void);
 extern int MAG_X_BUF[10];
 extern int MAG_Y_BUF[10]; 
 extern int MAG_Z_BUF[10];
-extern int MAG_ERR_BUF;
+//extern int MAG_ERR_BUF;
 
 	
 typedef union{

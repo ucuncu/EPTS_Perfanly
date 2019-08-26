@@ -79,4 +79,4 @@ extern void gyro_low_power_mode (void);
 extern int GYRO_X_BUF[10];
 extern int GYRO_Y_BUF[10];
 extern int GYRO_Z_BUF[10];
-extern int GYRO_ERR_BUF;
+//extern int GYRO_ERR_BUF;

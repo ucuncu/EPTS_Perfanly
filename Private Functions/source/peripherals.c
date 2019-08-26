@@ -624,8 +624,8 @@ void convertJsonRecSDbuf(void)
 	char lonString[12] = {NULL};
 	
 	//GPS value format dönüsümü
-	lat = atof(&GPS_NORTH_BUF[0][0])/100;
-	lon = atof(&GPS_EAST_BUF[0][0])/100;
+	lat = atof(&GPS_LAT_BUF[0][0])/100;
+	lon = atof(&GPS_LON_BUF[0][0])/100;
 	latFraction =100*modf(lat, &latInt)/60;
 	lonFraction =100*modf(lon, &lonInt)/60;
 	latNew = latInt + latFraction;
@@ -675,7 +675,7 @@ void convertJsonRecSDbuf(void)
 	json_object_dotset_number(root_object, "Ac.Z.8", ACC_Z_BUF[7]);
 	json_object_dotset_number(root_object, "Ac.Z.9", ACC_Z_BUF[8]);
 	json_object_dotset_number(root_object, "Ac.Z.10", ACC_Z_BUF[9]);
-	json_object_dotset_number(root_object, "Ac.Er", ACC_ERR_BUF);  // error silinebilir,
+	//json_object_dotset_number(root_object, "Ac.Er", ACC_ERR_BUF);  // error silinebilir,
 	json_object_dotset_number(root_object, "Gy.X.1", GYRO_X_BUF[0]);
 	json_object_dotset_number(root_object, "Gy.X.2", GYRO_X_BUF[1]);
 	json_object_dotset_number(root_object, "Gy.X.3", GYRO_X_BUF[2]);
@@ -706,7 +706,7 @@ void convertJsonRecSDbuf(void)
 	json_object_dotset_number(root_object, "Gy.Z.8", GYRO_Z_BUF[7]);
 	json_object_dotset_number(root_object, "Gy.Z.9", GYRO_Z_BUF[8]);
 	json_object_dotset_number(root_object, "Gy.Z.10", GYRO_Z_BUF[9]);
-	json_object_dotset_number(root_object, "Gy.Er", GYRO_ERR_BUF);  // error silinebilir,
+	//json_object_dotset_number(root_object, "Gy.Er", GYRO_ERR_BUF);  // error silinebilir,
 	json_object_dotset_number(root_object, "Mg.X.1", MAG_X_BUF[0]);
 	json_object_dotset_number(root_object, "Mg.X.2", MAG_X_BUF[1]);
 	json_object_dotset_number(root_object, "Mg.X.3", MAG_X_BUF[2]);
@@ -737,7 +737,7 @@ void convertJsonRecSDbuf(void)
 	json_object_dotset_number(root_object, "Mg.Z.8", MAG_Z_BUF[7]);
 	json_object_dotset_number(root_object, "Mg.Z.9", MAG_Z_BUF[8]);
 	json_object_dotset_number(root_object, "Mg.Z.10", MAG_Z_BUF[9]);
-	json_object_dotset_number(root_object, "Mg.Err", MAG_ERR_BUF);  // error silinebilir,
+	//json_object_dotset_number(root_object, "Mg.Er", MAG_ERR_BUF);  // error silinebilir,
 	
 	//json_object_set_number(root_object, "HeartRate", 125);	
 	//json_object_dotset_string(root_object, "address.city", "Cupertino");

@@ -53,7 +53,7 @@ int ACC_X_BUF[10];
 int ACC_Y_BUF[10];
 int ACC_Z_BUF[10];
 
-int ACC_ERR_BUF = 0;
+//int ACC_ERR_BUF = 0;
 
 int accErrCnt = 0;
 int accCnt = 0;
@@ -153,16 +153,16 @@ void read_acc (void)
 		{
 			fReadAcc = FALSE; // Communication is ok, all register read 
 		}
-		else
-		{
-			if (accErrCnt <= 0xFFFF)
-			{
-				accErrCnt ++;
-			}
-			ACC_ERR_BUF = accErrCnt;
-			//printf("AccErr\n");
-			//printf(" AccErr : %s\n",returnString);
-		}
+//		else
+//		{
+//			if (accErrCnt <= 0xFFFF)
+//			{
+//				accErrCnt ++;
+//			}
+//			ACC_ERR_BUF = accErrCnt;
+//			//printf("AccErr\n");
+//			//printf(" AccErr : %s\n",returnString);
+//		}
 		
 	  for (int i=0; i<6; i+=2)
 		{
