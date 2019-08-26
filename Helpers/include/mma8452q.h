@@ -54,9 +54,13 @@ extern void portraitLandscapeHandler( void );
 extern void checkAccelerometer(void);
 extern void acc_low_power_mode (void);
 
-extern int ACC_X_BUF[10];
-extern int ACC_Y_BUF[10];
-extern int ACC_Z_BUF[10];
+//extern int ACC_X_BUF[10];
+//extern int ACC_Y_BUF[10];
+//extern int ACC_Z_BUF[10];
+
+extern int ACC_X_BUF;
+extern int ACC_Y_BUF;
+extern int ACC_Z_BUF;
 //extern int ACC_ERR_BUF;
 
 #endif

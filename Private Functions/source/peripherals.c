@@ -37,7 +37,7 @@
 #define WDT_TIMEOUT 	5000000
 #define ButtDebounceUs 	200000
 #define SDCARDBUFFERHIGHT 	1      //Dafa fazla RAM olan bir islemciye geçilirse toplu yazma yapilabilir. Toplu Yazmanin avantaji olabilir sensör interrupi kaçirmamak için. Osiloskopta sürelere bakilmali.
-#define SDCARDBUFFERWIDTH 	1024
+#define SDCARDBUFFERWIDTH 	300
 
 char SDCARDBUFFER[SDCARDBUFFERHIGHT][SDCARDBUFFERWIDTH];
 
@@ -645,103 +645,16 @@ void convertJsonRecSDbuf(void)
 	json_object_dotset_string(root_object, "GPS.Lon", lonString);
 	json_object_dotset_string(root_object, "GPS.Alt", &GPS_ALTITUDE_DATA_BUF[0][0]);
 	json_object_dotset_string(root_object, "GPS.Vel", &GPS_VELOCITY_BUF[0][0]);
-	json_object_dotset_number(root_object, "Ac.X.1", ACC_X_BUF[0]);
-	json_object_dotset_number(root_object, "Ac.X.2", ACC_X_BUF[1]);
-	json_object_dotset_number(root_object, "Ac.X.3", ACC_X_BUF[2]);
-	json_object_dotset_number(root_object, "Ac.X.4", ACC_X_BUF[3]);
-	json_object_dotset_number(root_object, "Ac.X.5", ACC_X_BUF[4]);
-	json_object_dotset_number(root_object, "Ac.X.6", ACC_X_BUF[5]);
-	json_object_dotset_number(root_object, "Ac.X.7", ACC_X_BUF[6]);
-	json_object_dotset_number(root_object, "Ac.X.8", ACC_X_BUF[7]);
-	json_object_dotset_number(root_object, "Ac.X.9", ACC_X_BUF[8]);
-	json_object_dotset_number(root_object, "Ac.X.10", ACC_X_BUF[9]);
-	json_object_dotset_number(root_object, "Ac.Y.1", ACC_Y_BUF[0]);
-	json_object_dotset_number(root_object, "Ac.Y.2", ACC_Y_BUF[1]);
-	json_object_dotset_number(root_object, "Ac.Y.3", ACC_Y_BUF[2]);
-	json_object_dotset_number(root_object, "Ac.Y.4", ACC_Y_BUF[3]);
-	json_object_dotset_number(root_object, "Ac.Y.5", ACC_Y_BUF[4]);
-	json_object_dotset_number(root_object, "Ac.Y.6", ACC_Y_BUF[5]);
-	json_object_dotset_number(root_object, "Ac.Y.7", ACC_Y_BUF[6]);
-	json_object_dotset_number(root_object, "Ac.Y.8", ACC_Y_BUF[7]);
-	json_object_dotset_number(root_object, "Ac.Y.9", ACC_Y_BUF[8]);
-	json_object_dotset_number(root_object, "Ac.Y.10", ACC_Y_BUF[9]);
-	json_object_dotset_number(root_object, "Ac.Z.1", ACC_Z_BUF[0]);
-	json_object_dotset_number(root_object, "Ac.Z.2", ACC_Z_BUF[1]);
-	json_object_dotset_number(root_object, "Ac.Z.3", ACC_Z_BUF[2]);
-	json_object_dotset_number(root_object, "Ac.Z.4", ACC_Z_BUF[3]);
-	json_object_dotset_number(root_object, "Ac.Z.5", ACC_Z_BUF[4]);
-	json_object_dotset_number(root_object, "Ac.Z.6", ACC_Z_BUF[5]);
-	json_object_dotset_number(root_object, "Ac.Z.7", ACC_Z_BUF[6]);
-	json_object_dotset_number(root_object, "Ac.Z.8", ACC_Z_BUF[7]);
-	json_object_dotset_number(root_object, "Ac.Z.9", ACC_Z_BUF[8]);
-	json_object_dotset_number(root_object, "Ac.Z.10", ACC_Z_BUF[9]);
-	//json_object_dotset_number(root_object, "Ac.Er", ACC_ERR_BUF);  // error silinebilir,
-	json_object_dotset_number(root_object, "Gy.X.1", GYRO_X_BUF[0]);
-	json_object_dotset_number(root_object, "Gy.X.2", GYRO_X_BUF[1]);
-	json_object_dotset_number(root_object, "Gy.X.3", GYRO_X_BUF[2]);
-	json_object_dotset_number(root_object, "Gy.X.4", GYRO_X_BUF[3]);
-	json_object_dotset_number(root_object, "Gy.X.5", GYRO_X_BUF[4]);
-	json_object_dotset_number(root_object, "Gy.X.6", GYRO_X_BUF[5]);
-	json_object_dotset_number(root_object, "Gy.X.7", GYRO_X_BUF[6]);
-	json_object_dotset_number(root_object, "Gy.X.8", GYRO_X_BUF[7]);
-	json_object_dotset_number(root_object, "Gy.X.9", GYRO_X_BUF[8]);
-	json_object_dotset_number(root_object, "Gy.X.10", GYRO_X_BUF[9]);
-	json_object_dotset_number(root_object, "Gy.Y.1", GYRO_Y_BUF[0]);
-	json_object_dotset_number(root_object, "Gy.Y.2", GYRO_Y_BUF[1]);
-	json_object_dotset_number(root_object, "Gy.Y.3", GYRO_Y_BUF[2]);
-	json_object_dotset_number(root_object, "Gy.Y.4", GYRO_Y_BUF[3]);
-	json_object_dotset_number(root_object, "Gy.Y.5", GYRO_Y_BUF[4]);
-	json_object_dotset_number(root_object, "Gy.Y.6", GYRO_Y_BUF[5]);
-	json_object_dotset_number(root_object, "Gy.Y.7", GYRO_Y_BUF[6]);
-	json_object_dotset_number(root_object, "Gy.Y.8", GYRO_Y_BUF[7]);
-	json_object_dotset_number(root_object, "Gy.Y.9", GYRO_Y_BUF[8]);
-	json_object_dotset_number(root_object, "Gy.Y.10", GYRO_Y_BUF[9]);
-	json_object_dotset_number(root_object, "Gy.Z.1", GYRO_Z_BUF[0]);
-	json_object_dotset_number(root_object, "Gy.Z.2", GYRO_Z_BUF[1]);
-	json_object_dotset_number(root_object, "Gy.Z.3", GYRO_Z_BUF[2]);
-	json_object_dotset_number(root_object, "Gy.Z.4", GYRO_Z_BUF[3]);
-	json_object_dotset_number(root_object, "Gy.Z.5", GYRO_Z_BUF[4]);
-	json_object_dotset_number(root_object, "Gy.Z.6", GYRO_Z_BUF[5]);
-	json_object_dotset_number(root_object, "Gy.Z.7", GYRO_Z_BUF[6]);
-	json_object_dotset_number(root_object, "Gy.Z.8", GYRO_Z_BUF[7]);
-	json_object_dotset_number(root_object, "Gy.Z.9", GYRO_Z_BUF[8]);
-	json_object_dotset_number(root_object, "Gy.Z.10", GYRO_Z_BUF[9]);
-	//json_object_dotset_number(root_object, "Gy.Er", GYRO_ERR_BUF);  // error silinebilir,
-	json_object_dotset_number(root_object, "Mg.X.1", MAG_X_BUF[0]);
-	json_object_dotset_number(root_object, "Mg.X.2", MAG_X_BUF[1]);
-	json_object_dotset_number(root_object, "Mg.X.3", MAG_X_BUF[2]);
-	json_object_dotset_number(root_object, "Mg.X.4", MAG_X_BUF[3]);
-	json_object_dotset_number(root_object, "Mg.X.5", MAG_X_BUF[4]);
-	json_object_dotset_number(root_object, "Mg.X.6", MAG_X_BUF[5]);
-	json_object_dotset_number(root_object, "Mg.X.7", MAG_X_BUF[6]);
-	json_object_dotset_number(root_object, "Mg.X.8", MAG_X_BUF[7]);
-	json_object_dotset_number(root_object, "Mg.X.9", MAG_X_BUF[8]);
-	json_object_dotset_number(root_object, "Mg.X.10", MAG_X_BUF[9]);
-	json_object_dotset_number(root_object, "Mg.Y.1", MAG_Y_BUF[0]);
-	json_object_dotset_number(root_object, "Mg.Y.2", MAG_Y_BUF[1]);
-	json_object_dotset_number(root_object, "Mg.Y.3", MAG_Y_BUF[2]);
-	json_object_dotset_number(root_object, "Mg.Y.4", MAG_Y_BUF[3]);
-	json_object_dotset_number(root_object, "Mg.Y.5", MAG_Y_BUF[4]);
-	json_object_dotset_number(root_object, "Mg.Y.6", MAG_Y_BUF[5]);
-	json_object_dotset_number(root_object, "Mg.Y.7", MAG_Y_BUF[6]);
-	json_object_dotset_number(root_object, "Mg.Y.8", MAG_Y_BUF[7]);
-	json_object_dotset_number(root_object, "Mg.Y.9", MAG_Y_BUF[8]);
-	json_object_dotset_number(root_object, "Mg.Y.10", MAG_Y_BUF[9]);
-	json_object_dotset_number(root_object, "Mg.Z.1", MAG_Z_BUF[0]);
-	json_object_dotset_number(root_object, "Mg.Z.2", MAG_Z_BUF[1]);
-	json_object_dotset_number(root_object, "Mg.Z.3", MAG_Z_BUF[2]);
-	json_object_dotset_number(root_object, "Mg.Z.4", MAG_Z_BUF[3]);
-	json_object_dotset_number(root_object, "Mg.Z.5", MAG_Z_BUF[4]);
-	json_object_dotset_number(root_object, "Mg.Z.6", MAG_Z_BUF[5]);
-	json_object_dotset_number(root_object, "Mg.Z.7", MAG_Z_BUF[6]);
-	json_object_dotset_number(root_object, "Mg.Z.8", MAG_Z_BUF[7]);
-	json_object_dotset_number(root_object, "Mg.Z.9", MAG_Z_BUF[8]);
-	json_object_dotset_number(root_object, "Mg.Z.10", MAG_Z_BUF[9]);
-	//json_object_dotset_number(root_object, "Mg.Er", MAG_ERR_BUF);  // error silinebilir,
+	json_object_dotset_number(root_object, "Acc.X", ACC_X_BUF);
+	json_object_dotset_number(root_object, "Acc.Y", ACC_Y_BUF);
+	json_object_dotset_number(root_object, "Acc.Z", ACC_Z_BUF);
+	json_object_dotset_number(root_object, "Gyro.X", GYRO_X_BUF);
+	json_object_dotset_number(root_object, "Gyro.Y", GYRO_Y_BUF);
+	json_object_dotset_number(root_object, "Gyro.Z", GYRO_Z_BUF);
+	json_object_dotset_number(root_object, "Mag.X", MAG_X_BUF);
+	json_object_dotset_number(root_object, "Mag.Y", MAG_Y_BUF);
+	json_object_dotset_number(root_object, "Mag.Z", MAG_Z_BUF);
 	
-	//json_object_set_number(root_object, "HeartRate", 125);	
-	//json_object_dotset_string(root_object, "address.city", "Cupertino");
-	//json_object_dotset_value(root_object, "contact.emails", json_parse_string("[\"email@example.com\",\"email2@example.com\"]"));
 	//serialized_string = json_serialize_to_string_pretty(root_value);  // JSON FORMATI DAHA OKUNABILIR
 	
 	serialized_string = json_serialize_to_string(root_value); // JSON u TEK SATIRDA GOSTEREBILIR
@@ -775,7 +688,7 @@ void recordtoSDcard (void)
 	{
 		for( int t=0; t < SDCARDBUFFERWIDTH; t++)    ///// Osiloskopta süresine bakilmali. Yazarken 4096 BYTE da (dogrusu allacation unit size ne ayarlanmissa) yazmaya devam edemiyor. Cluster restlenmeli. hatali yaziyor
 		{ 
-			if((SDCARDBUFFER[k][ch] == '}')&&( cntJsonValue == 14))
+			if((SDCARDBUFFER[k][ch] == '}')&&( cntJsonValue == 5))
 			{
 				ch = 0;
 				cntJsonValue = 0;

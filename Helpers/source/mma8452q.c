@@ -49,9 +49,14 @@ int TMP_ACC_Z_BUF[10];
 //int ACC_Y_BUF = 0;  // Filtreleme kullanilacaksa
 //int ACC_Z_BUF = 0;  //
 
-int ACC_X_BUF[10];
-int ACC_Y_BUF[10];
-int ACC_Z_BUF[10];
+//int ACC_X_BUF[10];
+//int ACC_Y_BUF[10];
+//int ACC_Z_BUF[10];
+
+int ACC_X_BUF = 0;
+int ACC_Y_BUF = 0;
+int ACC_Z_BUF = 0;
+
 
 //int ACC_ERR_BUF = 0;
 
@@ -59,8 +64,8 @@ int accErrCnt = 0;
 int accCnt = 0;
 
 void recordToAccBuffer( int accX, int accY, int accZ);
-//void filterAccData(int a[], int b[], int c[], int array_size);
- void updateAccBuffer( void );	
+void filterAccData(int a[], int b[], int c[], int array_size);
+//void updateAccBuffer( void );	
 
 /**********************************************************************
  * @brief		Check Accelerometer - Read "Who am I" flag
@@ -246,64 +251,64 @@ void recordToAccBuffer( int accX, int accY, int accZ)
 	if (accCnt >= sampleNumber)
 	{		
 		accCnt = 0;
-		//filterAccData(TMP_ACC_X_BUF, TMP_ACC_Y_BUF, TMP_ACC_Z_BUF,  sampleNumber); // en küçük ve büyük degeri çikarip ortalama alir
-		updateAccBuffer();
+		filterAccData(TMP_ACC_X_BUF, TMP_ACC_Y_BUF, TMP_ACC_Z_BUF,  sampleNumber); // en küçük ve büyük degeri çikarip ortalama alir
+		//updateAccBuffer();
 	}	
 }
 
 /**********************************************************************
  * @brief		UPDATE ACCELEROMETER BUFFER
  **********************************************************************/
- void updateAccBuffer( void )
- {
-	 memcpy(ACC_X_BUF, TMP_ACC_X_BUF, sizeof(TMP_ACC_X_BUF));
-	 memcpy(ACC_Y_BUF, TMP_ACC_Y_BUF, sizeof(TMP_ACC_Y_BUF));
-	 memcpy(ACC_Z_BUF, TMP_ACC_Z_BUF, sizeof(TMP_ACC_Z_BUF));
- } 
+// void updateAccBuffer( void )
+// {
+//	 memcpy(ACC_X_BUF, TMP_ACC_X_BUF, sizeof(TMP_ACC_X_BUF));
+//	 memcpy(ACC_Y_BUF, TMP_ACC_Y_BUF, sizeof(TMP_ACC_Y_BUF));
+//	 memcpy(ACC_Z_BUF, TMP_ACC_Z_BUF, sizeof(TMP_ACC_Z_BUF));
+// } 
 
 /**********************************************************************
  * @brief		FILTER ACCELEROMETER DATA
  **********************************************************************/
-// void filterAccData(int a[], int b[], int c[], int array_size)
-// {
-//		int i, j, temp;
-//	 // Data sorting
-//		for (i = 0; i < (array_size - 1); ++i)
-//		{
-//			for (j = 0; j < array_size - 1 - i; ++j )
-//			{
-//				 if (a[j] > a[j+1])
-//				 {
-//						temp = a[j+1];
-//						a[j+1] = a[j];
-//						a[j] = temp;
-//				 }
-//				 if (b[j] > b[j+1])
-//				 {
-//						temp = b[j+1];
-//						b[j+1] = b[j];
-//						b[j] = temp;
-//				 }
-//				 if (c[j] > c[j+1])
-//				 {
-//						temp = c[j+1];
-//						c[j+1] = c[j];
-//						c[j] = temp;
-//				 }
-//			}
-//		}
+ void filterAccData(int a[], int b[], int c[], int array_size)
+ {
+		int i, j, temp;
+	 // Data sorting
+		for (i = 0; i < (array_size - 1); ++i)
+		{
+			for (j = 0; j < array_size - 1 - i; ++j )
+			{
+				 if (a[j] > a[j+1])
+				 {
+						temp = a[j+1];
+						a[j+1] = a[j];
+						a[j] = temp;
+				 }
+				 if (b[j] > b[j+1])
+				 {
+						temp = b[j+1];
+						b[j+1] = b[j];
+						b[j] = temp;
+				 }
+				 if (c[j] > c[j+1])
+				 {
+						temp = c[j+1];
+						c[j+1] = c[j];
+						c[j] = temp;
+				 }
+			}
+		}
+		
+		// eleminete max and min value and mean value
+		
+		ACC_X_BUF = (a[1] + a[2] + a[3] + a[4] + a[5] + a[6] + a[7] + a[8])/8;
+		ACC_Y_BUF = (b[1] + b[2] + b[3] + b[4] + b[5] + b[6] + b[7] + b[8])/8;
+		ACC_Z_BUF = (c[1] + c[2] + c[3] + c[4] + c[5] + c[6] + c[7] + c[8])/8;
 //		
-//		// eleminete max and min value and mean value
-//		
-//		ACC_X_BUF = (a[1] + a[2] + a[3] + a[4] + a[5] + a[6] + a[7] + a[8])/8;
-//		ACC_Y_BUF = (b[1] + b[2] + b[3] + b[4] + b[5] + b[6] + b[7] + b[8])/8;
-//		ACC_Z_BUF = (c[1] + c[2] + c[3] + c[4] + c[5] + c[6] + c[7] + c[8])/8;
-////		
-////		printf("ACC X : %d\n",ACC_X_BUF);
-////		printf("ACC Y : %d\n",ACC_Y_BUF);
-////		printf("ACC Z : %d\n",ACC_Z_BUF);
-//		
-// }  
+//		printf("ACC X : %d\n",ACC_X_BUF);
+//		printf("ACC Y : %d\n",ACC_Y_BUF);
+//		printf("ACC Z : %d\n",ACC_Z_BUF);
+		
+ }  
 
 
 

@@ -40,7 +40,7 @@
 
 void recordToGyroBuffer( int gyroX, int gyroY, int gyroZ);
 void filterGyroData(int a[], int b[], int c[], int array_size);
- void updateGyroBuffer( void );
+//void updateGyroBuffer( void );
  
 volatile int16_t newGyro[3];
 
@@ -48,9 +48,13 @@ int TMP_GYRO_X_BUF[10];
 int TMP_GYRO_Y_BUF[10];
 int TMP_GYRO_Z_BUF[10];
 
-int GYRO_X_BUF[10];
-int GYRO_Y_BUF[10];
-int GYRO_Z_BUF[10];
+//int GYRO_X_BUF[10];
+//int GYRO_Y_BUF[10];
+//int GYRO_Z_BUF[10];
+
+int GYRO_X_BUF = 0;
+int GYRO_Y_BUF = 0;
+int GYRO_Z_BUF = 0;
 
 //int GYRO_ERR_BUF = 0;
 
@@ -192,8 +196,8 @@ void recordToGyroBuffer( int gyroX, int gyroY, int gyroZ)
 	if (gyroCnt >=  sampleNumber)
 	{		
 		gyroCnt = 0;
-		//filterGyroData(TMP_GYRO_X_BUF, TMP_GYRO_Y_BUF, TMP_GYRO_Z_BUF,  sampleNumber);
-		 updateGyroBuffer();
+		filterGyroData(TMP_GYRO_X_BUF, TMP_GYRO_Y_BUF, TMP_GYRO_Z_BUF,  sampleNumber);
+		 //updateGyroBuffer();
 	}	
 }
 
@@ -201,49 +205,49 @@ void recordToGyroBuffer( int gyroX, int gyroY, int gyroZ)
 /**********************************************************************
  * @brief		UPDATE GYRO BUFFER
  **********************************************************************/
- void updateGyroBuffer( void )
- {
-	 memcpy(GYRO_X_BUF, TMP_GYRO_X_BUF, sizeof(TMP_GYRO_X_BUF));
-	 memcpy(GYRO_Y_BUF, TMP_GYRO_Y_BUF, sizeof(TMP_GYRO_Y_BUF));
-	 memcpy(GYRO_Z_BUF, TMP_GYRO_Z_BUF, sizeof(TMP_GYRO_Z_BUF));
- } 
-
-// void filterGyroData(int a[], int b[], int c[], int array_size)
+// void updateGyroBuffer( void )
 // {
-//		int i, j, temp;
-//	 // Data sorting
-//		for (i = 0; i < (array_size - 1); ++i)
-//		{
-//			for (j = 0; j < array_size - 1 - i; ++j )
-//			{
-//				 if (a[j] > a[j+1])
-//				 {
-//						temp = a[j+1];
-//						a[j+1] = a[j];
-//						a[j] = temp;
-//				 }
-//				 if (b[j] > b[j+1])
-//				 {
-//						temp = b[j+1];
-//						b[j+1] = b[j];
-//						b[j] = temp;
-//				 }
-//				 if (c[j] > c[j+1])
-//				 {
-//						temp = c[j+1];
-//						c[j+1] = c[j];
-//						c[j] = temp;
-//				 }
-//			}
-//		}
-//		
-//		// eleminete max and min value and mean value
-//		
-//		GYRO_X_BUF = (a[1] + a[2] + a[3] + a[4] + a[5] + a[6] + a[7] + a[8])/8;
-//		GYRO_Y_BUF = (b[1] + b[2] + b[3] + b[4] + b[5] + b[6] + b[7] + b[8])/8;
-//		GYRO_Z_BUF = (c[1] + c[2] + c[3] + c[4] + c[5] + c[6] + c[7] + c[8])/8;
-//			
-// }  
+//	 memcpy(GYRO_X_BUF, TMP_GYRO_X_BUF, sizeof(TMP_GYRO_X_BUF));
+//	 memcpy(GYRO_Y_BUF, TMP_GYRO_Y_BUF, sizeof(TMP_GYRO_Y_BUF));
+//	 memcpy(GYRO_Z_BUF, TMP_GYRO_Z_BUF, sizeof(TMP_GYRO_Z_BUF));
+// } 
+
+ void filterGyroData(int a[], int b[], int c[], int array_size)
+ {
+		int i, j, temp;
+	 // Data sorting
+		for (i = 0; i < (array_size - 1); ++i)
+		{
+			for (j = 0; j < array_size - 1 - i; ++j )
+			{
+				 if (a[j] > a[j+1])
+				 {
+						temp = a[j+1];
+						a[j+1] = a[j];
+						a[j] = temp;
+				 }
+				 if (b[j] > b[j+1])
+				 {
+						temp = b[j+1];
+						b[j+1] = b[j];
+						b[j] = temp;
+				 }
+				 if (c[j] > c[j+1])
+				 {
+						temp = c[j+1];
+						c[j+1] = c[j];
+						c[j] = temp;
+				 }
+			}
+		}
+		
+		// eleminete max and min value and mean value
+		
+		GYRO_X_BUF = (a[1] + a[2] + a[3] + a[4] + a[5] + a[6] + a[7] + a[8])/8;
+		GYRO_Y_BUF = (b[1] + b[2] + b[3] + b[4] + b[5] + b[6] + b[7] + b[8])/8;
+		GYRO_Z_BUF = (c[1] + c[2] + c[3] + c[4] + c[5] + c[6] + c[7] + c[8])/8;
+			
+ }  
 
 
 /*FUNCTION****************************************************************

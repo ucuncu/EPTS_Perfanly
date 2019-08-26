@@ -76,7 +76,11 @@ extern void read_gyro (void);
 extern void start_gyro (void);
 extern void checkGyro(void);
 extern void gyro_low_power_mode (void);
-extern int GYRO_X_BUF[10];
-extern int GYRO_Y_BUF[10];
-extern int GYRO_Z_BUF[10];
+//extern int GYRO_X_BUF[10];
+//extern int GYRO_Y_BUF[10];
+//extern int GYRO_Z_BUF[10];
+
+extern int GYRO_X_BUF;
+extern int GYRO_Y_BUF;
+extern int GYRO_Z_BUF;
 //extern int GYRO_ERR_BUF;

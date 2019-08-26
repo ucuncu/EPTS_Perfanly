@@ -42,7 +42,7 @@
 
 void recordToMagBuffer( int magX, int magY, int magZ);
 void filterMagData(int a[], int b[], int c[], int array_size);
- void updateMagBuffer( void );
+//void updateMagBuffer( void );
 	 
 volatile int16_t newMag[3]; 
 
@@ -50,9 +50,13 @@ int TMP_MAG_X_BUF[10];
 int TMP_MAG_Y_BUF[10];
 int TMP_MAG_Z_BUF[10];
 
-int MAG_X_BUF[10];
-int MAG_Y_BUF[10];
-int MAG_Z_BUF[10];
+//int MAG_X_BUF[10];
+//int MAG_Y_BUF[10];
+//int MAG_Z_BUF[10];
+
+int MAG_X_BUF = 0;
+int MAG_Y_BUF = 0;
+int MAG_Z_BUF = 0;
 
 //int MAG_ERR_BUF = 0;
 
@@ -216,58 +220,58 @@ void recordToMagBuffer( int magX, int magY, int magZ)
 	if (magCnt >=  sampleNumber)
 	{		
 		magCnt = 0;
-		//filterMagData(TMP_MAG_X_BUF, TMP_MAG_Y_BUF, TMP_MAG_Z_BUF,  sampleNumber);
-		 updateMagBuffer();
+		filterMagData(TMP_MAG_X_BUF, TMP_MAG_Y_BUF, TMP_MAG_Z_BUF,  sampleNumber);
+		 //updateMagBuffer();
 	}	
 }
 
 /**********************************************************************
  * @brief		UPDATE MAGNETOMETER BUFFER
  **********************************************************************/
- void updateMagBuffer( void )
- {
-	 memcpy(MAG_X_BUF, TMP_MAG_X_BUF, sizeof(TMP_MAG_X_BUF));
-	 memcpy(MAG_Y_BUF, TMP_MAG_Y_BUF, sizeof(TMP_MAG_Y_BUF));
-	 memcpy(MAG_Z_BUF, TMP_MAG_Z_BUF, sizeof(TMP_MAG_Z_BUF));
- } 
-
-
-// void filterMagData(int a[], int b[], int c[], int array_size)
+// void updateMagBuffer( void )
 // {
-//		int i, j, temp;
-//	 // Data sorting
-//		for (i = 0; i < (array_size - 1); ++i)
-//		{
-//			for (j = 0; j < array_size - 1 - i; ++j )
-//			{
-//				 if (a[j] > a[j+1])
-//				 {
-//						temp = a[j+1];
-//						a[j+1] = a[j];
-//						a[j] = temp;
-//				 }
-//				 if (b[j] > b[j+1])
-//				 {
-//						temp = b[j+1];
-//						b[j+1] = b[j];
-//						b[j] = temp;
-//				 }
-//				 if (c[j] > c[j+1])
-//				 {
-//						temp = c[j+1];
-//						c[j+1] = c[j];
-//						c[j] = temp;
-//				 }
-//			}
-//		}
-//		
-//		// eleminete max and min value and mean value
-//		
-//		MAG_X_BUF = (a[1] + a[2] + a[3] + a[4] + a[5] + a[6] + a[7] + a[8])/8;
-//		MAG_Y_BUF = (b[1] + b[2] + b[3] + b[4] + b[5] + b[6] + b[7] + b[8])/8;
-//		MAG_Z_BUF = (c[1] + c[2] + c[3] + c[4] + c[5] + c[6] + c[7] + c[8])/8;
-//	
-// }  
+//	 memcpy(MAG_X_BUF, TMP_MAG_X_BUF, sizeof(TMP_MAG_X_BUF));
+//	 memcpy(MAG_Y_BUF, TMP_MAG_Y_BUF, sizeof(TMP_MAG_Y_BUF));
+//	 memcpy(MAG_Z_BUF, TMP_MAG_Z_BUF, sizeof(TMP_MAG_Z_BUF));
+// } 
+
+
+ void filterMagData(int a[], int b[], int c[], int array_size)
+ {
+		int i, j, temp;
+	 // Data sorting
+		for (i = 0; i < (array_size - 1); ++i)
+		{
+			for (j = 0; j < array_size - 1 - i; ++j )
+			{
+				 if (a[j] > a[j+1])
+				 {
+						temp = a[j+1];
+						a[j+1] = a[j];
+						a[j] = temp;
+				 }
+				 if (b[j] > b[j+1])
+				 {
+						temp = b[j+1];
+						b[j+1] = b[j];
+						b[j] = temp;
+				 }
+				 if (c[j] > c[j+1])
+				 {
+						temp = c[j+1];
+						c[j+1] = c[j];
+						c[j] = temp;
+				 }
+			}
+		}
+		
+		// eleminete max and min value and mean value
+		
+		MAG_X_BUF = (a[1] + a[2] + a[3] + a[4] + a[5] + a[6] + a[7] + a[8])/8;
+		MAG_Y_BUF = (b[1] + b[2] + b[3] + b[4] + b[5] + b[6] + b[7] + b[8])/8;
+		MAG_Z_BUF = (c[1] + c[2] + c[3] + c[4] + c[5] + c[6] + c[7] + c[8])/8;
+	
+ }  
 
 
 
